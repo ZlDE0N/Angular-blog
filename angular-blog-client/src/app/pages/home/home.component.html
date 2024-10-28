@@ -1,0 +1,30 @@
+<section class="bg-home py-5">
+    <div class="container">
+        <div class="text-center mt-5">
+            <h2 class="text-white">Featured Posts</h2>
+            <div class="d-flex justify-content-center mb-4">
+                <div class="me-3">
+                    <button class="btn btn-primary" [routerLink]="['/create-category']">Create Category</button>
+                </div>
+                <div>
+                    <button class="btn btn-success" [routerLink]="['/create-entry']">Add Category</button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <ng-container *ngIf="featuredPostsArray.length > 0; else noEntries">
+                <div class="col-12 text-center text-white mt-4">
+                    <h4>Recent Entries</h4>
+                </div>
+                <div class="col-md-4 mt-3 d-flex justify-content-center" *ngFor="let featuredPost of featuredPostsArray">
+                    <app-post-card [postData]="featuredPost"></app-post-card>
+                </div>
+            </ng-container>
+            <ng-template #noEntries>
+                <div class="col-12 text-center text-white mt-4">
+                    <h4>No entries found.</h4>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</section>

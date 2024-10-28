@@ -1,0 +1,23 @@
+nav {
+    /* height: 50px; */
+    background-color: var(--navbar-footer-color);
+  }
+  
+  .nav-link {
+    text-transform: uppercase;
+    color: var(--primary-color);
+  }
+
+  .btn-secondary {
+    border-radius: 10%;
+  }
+
+  .btn-primary {
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Cambiar color de fondo */
+    color: #fff; /* Cambiar color de texto */
+  }
+  

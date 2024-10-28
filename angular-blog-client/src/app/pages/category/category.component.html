@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h2>Category: {{ categoryName }}</h2>
+  <p>Category ID: {{ categoryId }}</p>
+  
+  <div *ngFor="let entry of entries">
+    <app-post-card [postData]="entry"></app-post-card>
+  </div>
+</div>

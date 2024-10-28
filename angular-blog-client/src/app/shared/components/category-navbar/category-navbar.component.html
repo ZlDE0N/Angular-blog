@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <button 
+      type="button" 
+      class="btn btn-info me-2" 
+      (click)="fetchAuthors()">
+      Get Authors
+    </button>
+
+    <div class="dropdown me-2">
+      <select 
+        class="form-select" 
+        [(ngModel)]="selectedAuthor" 
+        (change)="selectAuthor(selectedAuthor)">
+        <option value="" disabled selected>select author</option>
+        <option *ngFor="let author of authors" [value]="author">{{ author }}</option>
+      </select>
+    </div>
+
+    <div class=" d-grid d-lg-flex  justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngFor="let category of categories" class="nav-item me-3">
+          <a class="nav-link" [routerLink]="['/category', category.name, category.id]">
+            {{ category.name }}
+          </a>
+          <button 
+            type="button" 
+            class="btn btn-secondary" 
+            *ngIf="isEditing && !isEditCategoryRoute()" 
+            [routerLink]="['/edit-category', category.id]">
+            Edit
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <button 
+      type="button" 
+      class="btn btn-info" 
+      *ngIf="!isEditCategoryRoute()" 
+      (click)="toggleEditing()">
+      {{ isEditing ? 'No Editar' : 'Editar Categorías' }}
+    </button>
+  </div>
+</nav>

@@ -1,0 +1,28 @@
+<header class="px-5 d-flex justify-content-center position-relative">
+  <div class="w-100 gap-5 d-flex justify-content-around align-items-center">
+    <div>
+      <a class="site-logo" routerLink="/">SALVA-BLOG</a>
+    </div>
+    <div class="d-flex align-items-center">
+      <ng-container *ngIf="isLoggedIn; else loginTemplate">
+
+        <div class="dropdown show">
+          <a *ngIf="!isLoginRoute()" class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ username }}
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><button class="dropdown-item" (click)="router.navigate(['/edit-information', userId])">Edit information</button></li>
+            <li><button class="dropdown-item" (click)="logout()">Exit</button></li>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #loginTemplate>
+        <button (click)="goToLogin()" class="btn btn-primary">Exit</button>
+      </ng-template>
+
+      <!-- Botón de registro en inglés, visible para todos -->
+      <p class="mb-0 ms-3"><button (click)="goToRegister()" class="btn btn-primary text-decoration-none cursor-pointer">Register here</button></p>
+    </div>
+  </div>
+</header>

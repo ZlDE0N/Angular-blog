@@ -1,0 +1,7 @@
+<div class="container mt-4">
+    <h2>Entradas de {{ author }}</h2>
+    <div *ngFor="let post of posts">
+      <app-post-card [postData]="post"></app-post-card>
+    </div>
+  </div>
+  

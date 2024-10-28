@@ -1,0 +1,51 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john.doe@example.com",
+        "password": "hashed_password_1",
+        "registrationDate": "2023-01-15"
+      },
+      {
+        "id": 2,
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "jane.smith@example.com",
+        "password": "hashed_password_2",
+        "registrationDate": "2023-02-20"
+      }
+    ],
+    "entries": [
+      {
+        "id": 1,
+        "title": "My First Blog Post",
+        "content": "This is the content of my first blog post.",
+        "publicationDate": "2023-03-01",
+        "authorId": 1,
+        "categories": [1, 2]
+      },
+      {
+        "id": 2,
+        "title": "Learning Angular",
+        "content": "Today I learned about Angular components and services.",
+        "publicationDate": "2023-04-05",
+        "authorId": 2,
+        "categories": [1]
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "name": "Technology",
+        "description": "Posts about the latest in technology."
+      },
+      {
+        "id": 2,
+        "name": "Lifestyle",
+        "description": "Insights and experiences related to lifestyle."
+      }
+    ]
+  }
+  

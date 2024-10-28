@@ -1,0 +1,28 @@
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="error">{{ error }}</div>
+<form [formGroup]="postForm" (ngSubmit)="updateEntry()">
+  <div>
+    <label>Title:</label>
+    <input formControlName="title" />
+  </div>
+  <div>
+    <label>Author:</label>
+    <input formControlName="author" />
+  </div>
+  <div>
+    <label>Date:</label>
+    <input formControlName="publicationDate" type="date" />
+  </div>
+  <div>
+    <label>Content:</label>
+    <textarea formControlName="content"></textarea>
+  </div>
+  <div>
+    <label>Category:</label>
+    <select formControlName="idCategories">
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+  </div>
+  <button type="submit">Actualizar Entrada</button>
+  <button type="button" (click)="deleteEntry()">Delete Entry</button>
+</form>
